@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block main %}
+    <table style = "width:100%">
+        <tr>
+            <th>Date & Time (GMT)</th>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>Number</th>
+            <th>Price</th>
+            <th>Total Price</th>
+        </tr>
+        
+        {% for transaction in history %}
+        <tr>
+            <td>{{ transaction.time }}</td>
+            <td>{{ transaction.symbol }}</td>
+            <td>{{ transaction.name }}</td>
+            <td>{{ transaction.number }} </td>
+            <td>{{ transaction.price }}</td>
+            <td>{{ transaction.total_price }}</td>
+        </tr>
+        
+        {% endfor %}
+        
+        <tr>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        
+        </tr>
+    </table> 
+{% endblock %}

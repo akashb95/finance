@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+   {% for nq in no_quotes%}
+       <b>No match for:</b> {{ nq }}
+       <br>
+   {% endfor %}
+    
+    <table style = "width:100%">
+        <tr>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+        
+        {% for quote in quotes %}
+        <tr>
+           <td>{{ quote.symbol }}</td> 
+           <td>{{ quote.name }}</td>
+           <td>{{ quote.price }}</td>
+        </tr>
+        {% endfor %}
+        
+    </table> 
+
+{% endblock %}
